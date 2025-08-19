@@ -437,8 +437,8 @@ Transform:
   m_GameObject: {fileID: 828595854}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.4665, z: 0}
-  m_LocalScale: {x: 6.1333, y: 0.14869478, z: 1}
+  m_LocalPosition: {x: 0.8032, y: -1.4665, z: 0}
+  m_LocalScale: {x: 15.223614, y: 0.14869478, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -983,6 +983,7 @@ GameObject:
   - component: {fileID: 1345550861}
   - component: {fileID: 1345550860}
   - component: {fileID: 1345550864}
+  - component: {fileID: 1345550865}
   m_Layer: 3
   m_Name: PlayerJo
   m_TagString: Untagged
@@ -1128,7 +1129,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1674969424}
@@ -1146,13 +1147,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 659a52ad452ca7f4ca7239bcf664aeb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 7
   jump: 8
   groundCheck: {fileID: 1674969424}
   checkRadius: 0.2
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!95 &1345550865
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345550859}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0fb94c7c8f45ed04e8fe21f8795691eb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1557473367
 GameObject:
   m_ObjectHideFlags: 0

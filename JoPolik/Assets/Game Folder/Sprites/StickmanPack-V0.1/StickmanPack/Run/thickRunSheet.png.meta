@@ -166,20 +166,20 @@ TextureImporter:
       name: thickRunSheet_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 12
-        width: 44
-        height: 43
+        x: 8
+        y: 13
+        width: 42
+        height: 41
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: cfd99a3dac3c76690800000000000000
-      internalID: -7608897769517244932
+      spriteID: 69a4090a9a9ab414788d0a221038fdaf
+      internalID: -221605027
       vertices: []
       indices: 
       edges: []
@@ -188,20 +188,20 @@ TextureImporter:
       name: thickRunSheet_1
       rect:
         serializedVersion: 2
-        x: 73
-        y: 11
-        width: 40
-        height: 45
+        x: 74
+        y: 12
+        width: 38
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8879f0e6470197660800000000000000
-      internalID: 7383951156299405192
+      spriteID: 8a6696c505cc46d4a9e0a8f466172181
+      internalID: 459667612
       vertices: []
       indices: 
       edges: []
@@ -210,20 +210,20 @@ TextureImporter:
       name: thickRunSheet_2
       rect:
         serializedVersion: 2
-        x: 136
-        y: 4
-        width: 37
-        height: 53
+        x: 137
+        y: 5
+        width: 35
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c47de36dc850b26d0800000000000000
-      internalID: -3014309423146412212
+      spriteID: 508df7aacfbf2d6458831501ac2df9cb
+      internalID: 475799462
       vertices: []
       indices: 
       edges: []
@@ -232,20 +232,20 @@ TextureImporter:
       name: thickRunSheet_3
       rect:
         serializedVersion: 2
-        x: 210
-        y: 2
-        width: 23
-        height: 55
+        x: 211
+        y: 3
+        width: 21
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0546af351303e7fe0800000000000000
-      internalID: -1189460263158782896
+      spriteID: 5a61a0a57a9fc9a43b399dd21f063641
+      internalID: 1141454184
       vertices: []
       indices: 
       edges: []
@@ -254,20 +254,20 @@ TextureImporter:
       name: thickRunSheet_4
       rect:
         serializedVersion: 2
-        x: 278
-        y: 1
-        width: 19
-        height: 56
+        x: 279
+        y: 2
+        width: 17
+        height: 54
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 113e03aee0d3acd40800000000000000
-      internalID: 5605359820483912465
+      spriteID: 48134d891aedce146bcd1c9b2d7c0467
+      internalID: 1278812329
       vertices: []
       indices: 
       edges: []
@@ -276,20 +276,20 @@ TextureImporter:
       name: thickRunSheet_5
       rect:
         serializedVersion: 2
-        x: 338
-        y: 2
-        width: 23
-        height: 54
+        x: 339
+        y: 3
+        width: 21
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 70a31af973648b620800000000000000
-      internalID: 2790057173871311367
+      spriteID: f1905cc804feda148abfd17d517a6c01
+      internalID: -1347931642
       vertices: []
       indices: 
       edges: []
@@ -298,20 +298,20 @@ TextureImporter:
       name: thickRunSheet_6
       rect:
         serializedVersion: 2
-        x: 392
-        y: 4
-        width: 37
-        height: 51
+        x: 393
+        y: 5
+        width: 35
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d6f42bfceac0637e0800000000000000
-      internalID: -1786226257257410707
+      spriteID: af45bc3e56fa1c4449838b536f3e23f3
+      internalID: 805844869
       vertices: []
       indices: 
       edges: []
@@ -320,20 +320,20 @@ TextureImporter:
       name: thickRunSheet_7
       rect:
         serializedVersion: 2
-        x: 456
-        y: 4
-        width: 38
-        height: 50
+        x: 457
+        y: 5
+        width: 36
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f0bd19ca281c8a230800000000000000
-      internalID: 3650380264968936207
+      spriteID: 6177f44eb956c274ca9943e2931bb55c
+      internalID: 27599792
       vertices: []
       indices: 
       edges: []
@@ -342,20 +342,20 @@ TextureImporter:
       name: thickRunSheet_8
       rect:
         serializedVersion: 2
-        x: 521
-        y: 11
-        width: 40
-        height: 43
+        x: 522
+        y: 12
+        width: 38
+        height: 41
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5f4900eaf5cab9430800000000000000
-      internalID: 3790813038303548661
+      spriteID: 3bceec517d6398441bddd627c0380f6b
+      internalID: 984063921
       vertices: []
       indices: 
       edges: []
@@ -364,7 +364,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: da323d7a718aa834688157f7e4afc15b
     internalID: 0
     vertices: []
     indices: 
@@ -372,8 +372,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
-    nameFileIdTable: {}
+      entries:
+      - key: SpriteEditor.SliceOnImport
+        value: False
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      thickRunSheet_0: -221605027
+      thickRunSheet_1: 459667612
+      thickRunSheet_2: 475799462
+      thickRunSheet_3: 1141454184
+      thickRunSheet_4: 1278812329
+      thickRunSheet_5: -1347931642
+      thickRunSheet_6: 805844869
+      thickRunSheet_7: 27599792
+      thickRunSheet_8: 984063921
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
