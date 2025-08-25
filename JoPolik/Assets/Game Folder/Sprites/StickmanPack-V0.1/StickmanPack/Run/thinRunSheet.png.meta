@@ -373,7 +373,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      thinRunSheet_0: -2666741940011693126
+      thinRunSheet_1: -5904605445474630053
+      thinRunSheet_2: -1866883015719241950
+      thinRunSheet_3: 8613653074917116285
+      thinRunSheet_4: 4470266972586839751
+      thinRunSheet_5: 6494950433765411924
+      thinRunSheet_6: -841422134276383105
+      thinRunSheet_7: 6178667286365801087
+      thinRunSheet_8: 3302137600719668690
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

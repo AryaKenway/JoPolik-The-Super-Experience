@@ -398,7 +398,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      thickPunchSheet_0: -1737712145811877636
+      thickPunchSheet_1: 2965818642026072752
+      thickPunchSheet_2: -2054396961978029189
+      thickPunchSheet_3: 8970547417952024075
+      thickPunchSheet_4: -3307157283271167753
+      thickPunchSheet_5: -8614455893645209865
+      thickPunchSheet_6: 3098455553854665454
+      thickPunchSheet_7: -4779314870578791358
+      thickPunchSheet_8: 9038772755236064133
+      thickPunchSheet_9: -1886349428396199770
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
