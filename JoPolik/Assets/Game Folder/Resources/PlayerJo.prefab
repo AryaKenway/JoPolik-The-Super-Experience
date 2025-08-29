@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: -4636315749265318843}
   m_Layer: 3
   m_Name: PlayerJo
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -337,6 +337,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  respawnPoint: {x: 0, y: 2, z: 0}
+  deathYThreshold: -3
 --- !u!95 &9124725512006542545
 Animator:
   serializedVersion: 7
