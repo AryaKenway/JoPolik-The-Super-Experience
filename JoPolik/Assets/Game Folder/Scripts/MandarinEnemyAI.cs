@@ -1,3 +1,4 @@
+//Uses matching pursuit algorithm
 using UnityEngine;
 using Photon.Pun;
 
@@ -7,8 +8,12 @@ public class MandarinEnemyAI : MonoBehaviourPun, IPunObservable
     public Transform groundCheck;
     public float speed = 3f;
     public float followDuration = 5f;
-    public float groundCheckDistance = 1f;
+    public float groundCheckDistance = 0.2f;
     public LayerMask groundLayer;
+
+    // trigger conditions
+    public float triggerX = 10f;        // enemy activates when player passes this X
+    public float minY = -2f, maxY = 2f; // only if player is within this Y range
 
     private bool isFollowing = false;
     private float followTimer = 0f;
@@ -17,46 +22,61 @@ public class MandarinEnemyAI : MonoBehaviourPun, IPunObservable
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        if (player == null && GameObject.FindGameObjectWithTag("Player") != null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+        }
     }
 
     void Update()
     {
-        if (PhotonNetwork.IsMasterClient)
-        {
-            if (isFollowing)
-            {
-                followTimer -= Time.deltaTime;
+        if (!PhotonNetwork.IsMasterClient) return;
 
-                if (followTimer > 0)
-                {
-                    FollowPlayer();
-                }
-                else
-                {
-                    isFollowing = false;
-                    rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
-                }
+        if (!isFollowing && player != null)
+        {
+            // Check if player has reached trigger area
+            if (player.position.x >= triggerX &&
+                player.position.y >= minY &&
+                player.position.y <= maxY)
+            {
+                TriggerFollow();
+            }
+        }
+
+        if (isFollowing)
+        {
+            followTimer -= Time.deltaTime;
+
+            if (followTimer > 0)
+            {
+                FollowPlayer();
+            }
+            else
+            {
+                PhotonNetwork.Destroy(gameObject); // remove enemy after chase
             }
         }
     }
 
     public void TriggerFollow()
     {
-        if (PhotonNetwork.IsMasterClient)
-        {
-            isFollowing = true;
-            followTimer = followDuration;
-        }
+        isFollowing = true;
+        followTimer = followDuration;
     }
 
     private void FollowPlayer()
     {
-        bool groundAhead = Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, groundLayer);
-
-        if (!groundAhead)
+        if (groundCheck != null)
         {
-            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
-            return;
+            bool groundAhead = Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, groundLayer);
+            Debug.DrawRay(groundCheck.position, Vector2.down * groundCheckDistance, Color.red);
+
+            if (!groundAhead)
+            {
+                rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+                return;
+            }
         }
 
         if (player != null)
@@ -89,3 +109,4 @@ public class MandarinEnemyAI : MonoBehaviourPun, IPunObservable
         }
     }
 }
+

@@ -23,7 +23,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     void SpawnPlayer()
     {
-        // Make sure prefab name matches exactly and prefab is in Assets/Resources/
         PhotonNetwork.Instantiate("PlayerJo", Vector3.zero, Quaternion.identity);
     }
 }

@@ -112,6 +112,9 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  triggerX: 10
+  minY: -2
+  maxY: 2
 --- !u!50 &8793725710144320807
 Rigidbody2D:
   serializedVersion: 5

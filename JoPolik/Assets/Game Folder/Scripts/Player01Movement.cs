@@ -136,14 +136,12 @@ public class Player01Movement : MonoBehaviourPun, IPunObservable
     private Collider2D playerCollider;
     private Animator animator;
 
-    // network smoothing
     private Vector3 networkPosition;
     private Vector2 networkVelocity;
     private float networkScaleX;
     private float networkAnimSpeed;
 
-    // Respawn system
-    public Vector3 respawnPoint = new Vector3(0, 2, 0); // default spawn point
+    public Vector3 respawnPoint = new Vector3(0, 2, 0); 
     public float deathYThreshold = -3f;
     private bool isDead = false;
 
@@ -195,7 +193,6 @@ public class Player01Movement : MonoBehaviourPun, IPunObservable
                     StartCoroutine(DisablePlatform(platform));
             }
 
-            // Death check
             if (transform.position.y < deathYThreshold)
             {
                 StartCoroutine(DieAndRespawn());
@@ -223,18 +220,14 @@ public class Player01Movement : MonoBehaviourPun, IPunObservable
     {
         isDead = true;
 
-        // Play death animation if you have one
-        //animator.SetTrigger("Die");
-
-        // Disable movement temporarily
         rb.linearVelocity = Vector2.zero;
         rb.simulated = false;
         playerCollider.enabled = false;
 
-        yield return new WaitForSeconds(2f); // death delay
+        yield return new WaitForSeconds(2f); 
 
-        // Respawn
-        transform.position = respawnPoint; // or pick random from a list of spawn points
+        
+        transform.position = respawnPoint; 
         rb.simulated = true;
         playerCollider.enabled = true;
         isDead = false;

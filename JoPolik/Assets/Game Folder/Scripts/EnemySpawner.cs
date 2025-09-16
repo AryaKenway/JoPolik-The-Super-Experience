@@ -41,7 +41,7 @@ using Photon.Pun;
 public class EnemySpawner : MonoBehaviourPunCallbacks
 {
     public string enemyPrefabName = "KiloTheUnjust"; // prefab must be in Resources folder
-    public Vector3 spawnPosition = new Vector3(0, 0, 0);
+    public Vector3 spawnPosition = new Vector3(-14, -1, 0);
 
     public override void OnJoinedRoom()
     {
