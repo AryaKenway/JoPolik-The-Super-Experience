@@ -1,43 +1,6 @@
-﻿//using System.Collections;
-//using System.Collections.Generic;
-//using UnityEngine;
-
-//namespace SojaExiles
-
-//{
-//    public class PlayerMovement : MonoBehaviour
-//    {
-
-//        public CharacterController controller;
-
-//        public float speed = 5f;
-//        public float gravity = -15f;
-
-//        Vector3 velocity;
-
-//        bool isGrounded;
-
-//        // Update is called once per frame
-//        void Update()
-//        {
-
-//            float x = Input.GetAxis("Horizontal");
-//            float z = Input.GetAxis("Vertical");
-
-//            Vector3 move = transform.right * x + transform.forward * z;
-
-//            controller.Move(move * speed * Time.deltaTime);
-
-//            velocity.y += gravity * Time.deltaTime;
-
-//            controller.Move(velocity * Time.deltaTime);
-
-//        }
-//    }
-//}
-
-using UnityEngine;
+﻿using UnityEngine;
 using Photon.Pun;
+using Unity.VisualScripting;
 
 namespace SojaExiles
 {
@@ -47,12 +10,16 @@ namespace SojaExiles
         public float speed = 5f;
         public float gravity = -15f;
         public float interactRange = 3f; // range to interact with doors
+        public bool canMove = true;
+
 
         Vector3 velocity;
 
         void Update()
         {
             if (!photonView.IsMine) return;
+            if (!canMove) return; // disable movement/input when panel is open
+
 
             float x = Input.GetAxis("Horizontal");
             float z = Input.GetAxis("Vertical");

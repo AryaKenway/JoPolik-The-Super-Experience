@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
+    [SerializeField] private Vector3[] spawnPositions; // set positions per scene in Inspector
+
     void Start()
     {
         PhotonNetwork.ConnectUsingSettings();
@@ -23,6 +25,14 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     void SpawnPlayer()
     {
-        PhotonNetwork.Instantiate("PlayerJo", Vector3.zero, Quaternion.identity);
+        Vector3 spawnPos = Vector3.zero;
+
+        if (spawnPositions != null && spawnPositions.Length > 0)
+        {
+            int index = Random.Range(0, spawnPositions.Length);
+            spawnPos = spawnPositions[index];
+        }
+
+        PhotonNetwork.Instantiate("PlayerJo", spawnPos, Quaternion.identity);
     }
 }

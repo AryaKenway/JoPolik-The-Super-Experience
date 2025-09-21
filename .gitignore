@@ -86,6 +86,14 @@ ExportedObj/
 *.unitypackage
 *.unitypackage.meta
 
+# Build outputs (prevent GitHub large file errors)
+*.exe
+*.zip
+*.resS
+*.dll
+*.so
+*.dylib
+
 # ============================
 # Crashlytics
 # ============================
@@ -99,5 +107,3 @@ crashlytics-build.properties
 [Aa]ssets/Photon/PhotonVoice/Demos/
 [Aa]ssets/Photon/Doc/
 [Aa]ssets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset
-
-

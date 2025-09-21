@@ -1,3 +1,6 @@
+﻿
+
+
 using UnityEngine;
 
 public class WorldGenerator : MonoBehaviour
@@ -12,8 +15,18 @@ public class WorldGenerator : MonoBehaviour
     public Vector3 buildingCenter = Vector3.zero;
     public Vector2 buildingSize = new Vector2(40f, 30f); // width (X) & depth (Z)
 
+    [Header("World Seed")]
+    public int seed = 0;  // 0 = random, otherwise reproducible
+
     void Start()
     {
+        // If seed = 0 → generate a random seed from system time
+        if (seed == 0)
+        {
+            seed = System.DateTime.Now.GetHashCode();
+        }
+
+        Random.InitState(seed);
         GenerateWorld();
     }
 
@@ -31,13 +44,17 @@ public class WorldGenerator : MonoBehaviour
 
                 // Spawn a ground tile
                 GameObject tilePrefab = groundTiles[Random.Range(0, groundTiles.Length)];
-                Instantiate(tilePrefab, spawnPos, Quaternion.identity, transform);
+                GameObject tile= Instantiate(tilePrefab, spawnPos, Quaternion.identity, transform);
 
                 // Randomly spawn a prop
                 if (Random.value < 0.2f) // 20% chance
                 {
                     GameObject propPrefab = props[Random.Range(0, props.Length)];
-                    Instantiate(propPrefab, spawnPos + Vector3.up * 0.5f, Quaternion.identity, transform);
+
+                    // use the ground tile's Y position as base
+                    Vector3 propPos = new Vector3(spawnPos.x, tile.transform.position.y, spawnPos.z);
+
+                    Instantiate(propPrefab, propPos, Quaternion.identity, transform);
                 }
             }
         }
