@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class TotemInteraction : MonoBehaviour
 {
-    public string questionID = "q1";          // ID of the question for this NPC
-    public QuestionManager2D questionManager; // Drag your QuestionManager2D in Inspector
+    public QuestionManager2D questionManager; 
 
     private bool isPlayerNearby = false;
 
@@ -12,7 +11,7 @@ public class TotemInteraction : MonoBehaviour
         if (isPlayerNearby && Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("Interacting with NPC...");
-            questionManager.ShowQuestion(questionID);
+            questionManager.ShowQuestion(); 
         }
     }
 

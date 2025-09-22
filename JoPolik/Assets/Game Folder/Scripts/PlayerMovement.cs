@@ -9,7 +9,7 @@ namespace SojaExiles
         public CharacterController controller;
         public float speed = 5f;
         public float gravity = -15f;
-        public float interactRange = 3f; // range to interact with doors
+        public float interactRange = 3f; 
         public bool canMove = true;
 
 
@@ -18,7 +18,7 @@ namespace SojaExiles
         void Update()
         {
             if (!photonView.IsMine) return;
-            if (!canMove) return; // disable movement/input when panel is open
+            if (!canMove) return; 
 
 
             float x = Input.GetAxis("Horizontal");

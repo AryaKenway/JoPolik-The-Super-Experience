@@ -11,40 +11,46 @@ public class QuestionManager2D : MonoBehaviour
     public TMP_InputField answerInput;
     public Button submitButton;
 
-    public Player01Movement player;    // Your 2D player movement script
-    public GameObject invisibleBarrier; // Assign the barrier GameObject in Inspector
+    public static bool IsQuestionActive = false;
+
+    public Player01Movement player;
+    public GameObject invisibleBarrier;
 
     private class Question { public string text; public string answer; }
-    private Dictionary<string, Question> questions = new Dictionary<string, Question>();
+    private List<Question> questions = new List<Question>();
 
-    private string currentQuestionID;
+    private Question currentQuestion;
+    private System.Random rng = new System.Random();
 
     void Start()
     {
-        // Example question
-        questions.Add("q1", new Question { text = "What data structure is used in the implementation of recursion?", answer = "Stack" });
+        questions.Add(new Question { text = "What data structure is used in the implementation of recursion?", answer = "Stack" });
+        questions.Add(new Question { text = "What is the time complexity of binary search?", answer = "O(log n)" });
+        questions.Add(new Question { text = "Which sorting algorithm is based on divide and conquer?", answer = "Quick Sort" });
+        questions.Add(new Question { text = "What data structure uses FIFO principle?", answer = "Queue" });
+        questions.Add(new Question { text = "Which algorithm is used to find the shortest path in a graph?", answer = "Dijkstra" });
 
         submitButton.onClick.AddListener(CheckAnswer);
         questionPanel.SetActive(false);
     }
 
-    public void ShowQuestion(string id)
+    public void ShowQuestion()
     {
-        if (!questions.ContainsKey(id)) return;
+        if (questions.Count == 0) return;
 
-        currentQuestionID = id;
-        questionText.text = questions[id].text;
+        int index = rng.Next(questions.Count);
+        currentQuestion = questions[index];
+
+        questionText.text = currentQuestion.text;
         answerInput.text = "";
         questionPanel.SetActive(true);
+        IsQuestionActive = true;
 
-        // Disable player movement
         if (player != null) player.canMove = false;
 
-        // Show cursor
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
-        // Focus input
         answerInput.ActivateInputField();
     }
 
@@ -52,11 +58,11 @@ public class QuestionManager2D : MonoBehaviour
     {
         string playerAnswer = answerInput.text.Trim();
 
-        if (playerAnswer.Equals(questions[currentQuestionID].answer, System.StringComparison.OrdinalIgnoreCase))
+        if (playerAnswer.Equals(currentQuestion.answer, System.StringComparison.OrdinalIgnoreCase))
         {
             Debug.Log("Correct! Unlocking barrier.");
             if (invisibleBarrier != null)
-                invisibleBarrier.SetActive(false); // disables the barrier
+                invisibleBarrier.SetActive(false);
         }
         else
         {
@@ -64,11 +70,10 @@ public class QuestionManager2D : MonoBehaviour
         }
 
         questionPanel.SetActive(false);
+        IsQuestionActive = false;
 
-        // Re-enable player movement
         if (player != null) player.canMove = true;
 
-        // Hide cursor
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }

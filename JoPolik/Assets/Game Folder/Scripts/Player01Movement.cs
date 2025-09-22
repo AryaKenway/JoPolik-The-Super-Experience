@@ -25,7 +25,6 @@ public class Player01Movement : MonoBehaviourPun, IPunObservable
     public float deathYThreshold = -3f;
     private bool isDead = false;
 
-    // NEW: movement toggle
     public bool canMove = true;
 
     void Awake()
@@ -47,12 +46,11 @@ public class Player01Movement : MonoBehaviourPun, IPunObservable
             if (c) c.gameObject.SetActive(false);
         }
     }
-
     void Update()
     {
         if (photonView.IsMine && !isDead)
         {
-            if (canMove) // <<< check here
+            if (!QuestionManager2D.IsQuestionActive && canMove)
             {
                 float moveInput = Input.GetAxisRaw("Horizontal");
                 rb.linearVelocity = new Vector2(moveInput * speed, rb.linearVelocity.y);
@@ -80,7 +78,6 @@ public class Player01Movement : MonoBehaviourPun, IPunObservable
             }
             else
             {
-                // Stop horizontal movement if canMove is false
                 rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
                 animator.SetFloat("Float Speed", 0f);
             }

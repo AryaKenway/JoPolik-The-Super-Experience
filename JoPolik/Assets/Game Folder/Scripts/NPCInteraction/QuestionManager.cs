@@ -8,18 +8,17 @@ using System.Collections;
 public class QuestionManager : MonoBehaviour
 {
     public GameObject questionPanel;
-    public TMP_Text questionText;        // TMP text for question
-    public TMP_InputField answerInput;   // TMP input field
+    public TMP_Text questionText;        
+    public TMP_InputField answerInput;  
     public Button submitButton;
 
     public Transform npcTransform;
-    public int coinCount = 5;           // number of coins to spawn
-    public float spawnRadius = 2f;      // how far coins can spread around NPC
+    public int coinCount = 5;          
+    public float spawnRadius = 2f;     
 
-
-    public PlayerMovement player;        // reference to player script
-    public GameObject goldPrefab;      // assign your gold prefab in Inspector
-    public Transform rewardSpawnPoint;  // optional: where gold should appear
+    public PlayerMovement player;        
+    public GameObject goldPrefab;      
+    public Transform rewardSpawnPoint;  
 
     private class Question { public string text; public string answer; }
     private Dictionary<string, Question> questions = new Dictionary<string, Question>();
@@ -28,7 +27,6 @@ public class QuestionManager : MonoBehaviour
 
     void Start()
     {
-        // Example question
         questions.Add("q1", new Question { text = "What is the time complexity of binary search?", answer = "O(log n)" });
 
         submitButton.onClick.AddListener(CheckAnswer);
@@ -45,14 +43,11 @@ public class QuestionManager : MonoBehaviour
         answerInput.text = "";
         questionPanel.SetActive(true);
 
-        // Disable player movement
         if (player != null) player.canMove = false;
 
-        // Enable and unlock cursor
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
-        // Focus input field
         answerInput.ActivateInputField();
 
         Debug.Log("Panel active: " + questionPanel.activeSelf);
@@ -74,10 +69,8 @@ public class QuestionManager : MonoBehaviour
 
         questionPanel.SetActive(false);
 
-        // Re-enable player movement
         if (player != null) player.canMove = true;
 
-        // Hide and lock cursor again
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -94,9 +87,7 @@ public class QuestionManager : MonoBehaviour
 
         for (int i = 0; i < coinCount; i++)
         {
-            // Random horizontal offset around NPC
             Vector2 randomOffset = Random.insideUnitCircle * spawnRadius;
-            // Spawn slightly above NPC to let gravity pull them down
             Vector3 spawnPos = npcTransform.position + new Vector3(randomOffset.x, 2f, randomOffset.y);
 
             Instantiate(goldPrefab, spawnPos, Quaternion.identity);

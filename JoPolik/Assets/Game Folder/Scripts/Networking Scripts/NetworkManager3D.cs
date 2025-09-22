@@ -3,11 +3,10 @@ using UnityEngine;
 
 public class NetworkManager3D : MonoBehaviourPunCallbacks
 {
-    public string playerPrefabName = "BA_First Person Player"; // prefab in Resources
+    public string playerPrefabName = "BA_First Person Player"; 
 
     void Start()
     {
-        // Check if already in a room
         if (PhotonNetwork.InRoom)
         {
             SpawnPlayer();
@@ -18,7 +17,6 @@ public class NetworkManager3D : MonoBehaviourPunCallbacks
         }
     }
 
-    // Only needed if you join room after connecting in this scene
     public override void OnJoinedRoom()
     {
         SpawnPlayer();

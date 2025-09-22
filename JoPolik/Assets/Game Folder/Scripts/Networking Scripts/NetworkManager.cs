@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
-    [SerializeField] private Vector3[] spawnPositions; // set positions per scene in Inspector
+    [SerializeField] private Vector3[] spawnPositions; 
 
     void Start()
     {

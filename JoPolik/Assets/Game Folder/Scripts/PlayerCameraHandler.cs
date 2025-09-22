@@ -10,7 +10,6 @@ public class PlayerCameraHandler : MonoBehaviourPun
 
         if (!photonView.IsMine)
         {
-            // Disable for remote players
             if (cam != null) cam.enabled = false;
             if (listener != null) listener.enabled = false;
         }
